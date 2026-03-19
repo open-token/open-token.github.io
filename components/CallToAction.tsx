@@ -3,13 +3,13 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FaGithub, FaRocket, FaHandshake } from 'react-icons/fa';
-import ContactFormModal from './ContactFormModal';
+import ContactModal from './ContactModal';
 
 export default function CallToAction() {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [modalType, setModalType] = useState<'Provider' | 'Project'>('Provider');
+  const [modalType, setModalType] = useState<'provider' | 'project'>('provider');
 
-  const openModal = (type: 'Provider' | 'Project') => {
+  const openModal = (type: 'provider' | 'project') => {
     setModalType(type);
     setIsModalOpen(true);
   };
@@ -72,7 +72,7 @@ export default function CallToAction() {
               </ul>
 
               <motion.button
-                onClick={() => openModal('Provider')}
+                onClick={() => openModal('provider')}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-full font-semibold text-lg hover:shadow-lg transition-all duration-300"
@@ -121,7 +121,7 @@ export default function CallToAction() {
               </ul>
 
               <motion.button
-                onClick={() => openModal('Project')}
+                onClick={() => openModal('project')}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-full font-semibold text-lg hover:shadow-lg transition-all duration-300"
@@ -153,8 +153,8 @@ export default function CallToAction() {
         </motion.div>
       </div>
 
-      {/* Contact Form Modal */}
-      <ContactFormModal
+      {/* Contact Modal */}
+      <ContactModal
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
         type={modalType}
