@@ -96,6 +96,19 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="border-t border-gray-800 pt-8 text-center">
+          <div className="mb-4">
+            <p className="text-lg font-semibold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400">
+              An initiative of the Agentic Open Source Foundation
+            </p>
+            <a
+              href="https://aosf-org.github.io/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-indigo-400 hover:text-indigo-300 transition-colors duration-300 text-sm font-medium"
+            >
+              Learn more about AOSF →
+            </a>
+          </div>
           <p className="text-gray-400 flex items-center justify-center gap-2">
             Made with <FaHeart className="text-red-500" /> for the open-source community
           </p>

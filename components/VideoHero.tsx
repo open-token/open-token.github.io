@@ -114,10 +114,27 @@ export default function VideoHero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="text-lg md:text-xl text-gray-200 max-w-3xl mx-auto mb-12 drop-shadow-lg"
+            className="text-lg md:text-xl text-gray-200 max-w-3xl mx-auto mb-8 drop-shadow-lg"
           >
             Empowering the open-source community through donated compute credits from leading AI providers.
             Building a future where innovation knows no boundaries.
+          </motion.p>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.7 }}
+            className="text-base md:text-lg text-gray-300 max-w-2xl mx-auto mb-12 drop-shadow-lg"
+          >
+            An initiative of the{' '}
+            <a
+              href="https://aosf-org.github.io/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-indigo-300 hover:text-indigo-200 underline decoration-indigo-400/50 hover:decoration-indigo-300 transition-colors duration-300"
+            >
+              Agentic Open Source Foundation
+            </a>
           </motion.p>
 
           <motion.div
