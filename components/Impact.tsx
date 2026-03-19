@@ -11,10 +11,10 @@ interface Stat {
 }
 
 const stats: Stat[] = [
-  { label: 'AI Providers', value: 9, suffix: '+' },
-  { label: 'Tokens Donated', value: 10, suffix: 'B+' },
-  { label: 'Projects Supported', value: 500, suffix: '+' },
-  { label: 'Cost Savings', value: 5, suffix: 'M+', prefix: '$' },
+  { label: 'Target AI Providers', value: 10, suffix: '+' },
+  { label: 'Vision: Tokens Enabled', value: 10, suffix: 'B+' },
+  { label: 'Goal: Projects Supported', value: 1000, suffix: '+' },
+  { label: 'Potential Cost Savings', value: 10, suffix: 'M+', prefix: '$' },
 ];
 
 function AnimatedNumber({ value, duration = 2000 }: { value: number; duration?: number }) {
@@ -81,10 +81,10 @@ export default function Impact() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">
-            Our Impact
+            Our Vision
           </h2>
           <p className="text-lg text-white/90 max-w-2xl mx-auto">
-            Democratizing AI access and accelerating innovation worldwide
+            Building a future where AI access is equitable and innovation is accessible to all
           </p>
         </motion.div>
 

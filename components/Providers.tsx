@@ -94,10 +94,10 @@ export default function Providers() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 to-purple-500">
-            Our Provider Partners
+            Envisioned Contributors
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-            Leading AI companies donating compute credits to support open-source innovation
+            Leading AI providers we envision joining this initiative to democratize AI access
           </p>
         </motion.div>
 
