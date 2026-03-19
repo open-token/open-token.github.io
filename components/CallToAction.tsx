@@ -1,10 +1,21 @@
 'use client';
 
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FaGithub, FaRocket, FaHandshake } from 'react-icons/fa';
+import ContactFormModal from './ContactFormModal';
 
 export default function CallToAction() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalType, setModalType] = useState<'Provider' | 'Project'>('Provider');
+
+  const openModal = (type: 'Provider' | 'Project') => {
+    setModalType(type);
+    setIsModalOpen(true);
+  };
+
   return (
+    <>
     <section className="py-20 bg-white dark:bg-gray-950">
       <div className="container mx-auto px-4">
         <motion.div
@@ -60,15 +71,15 @@ export default function CallToAction() {
                 </li>
               </ul>
 
-              <motion.a
-                href="mailto:contact@open-token.org?subject=Interest%20in%20Becoming%20an%20OpenToken%20Provider"
+              <motion.button
+                onClick={() => openModal('Provider')}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-full font-semibold text-lg hover:shadow-lg transition-all duration-300"
               >
                 <FaHandshake className="text-xl" />
                 Become a Provider
-              </motion.a>
+              </motion.button>
             </div>
           </motion.div>
 
@@ -109,15 +120,15 @@ export default function CallToAction() {
                 </li>
               </ul>
 
-              <motion.a
-                href="mailto:contact@open-token.org?subject=Application%20for%20OpenToken%20Credits"
+              <motion.button
+                onClick={() => openModal('Project')}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-full font-semibold text-lg hover:shadow-lg transition-all duration-300"
               >
                 <FaRocket className="text-xl" />
                 Apply for Credits
-              </motion.a>
+              </motion.button>
             </div>
           </motion.div>
         </div>
@@ -141,6 +152,14 @@ export default function CallToAction() {
           </a>
         </motion.div>
       </div>
+
+      {/* Contact Form Modal */}
+      <ContactFormModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        type={modalType}
+      />
     </section>
+    </>
   );
 }
