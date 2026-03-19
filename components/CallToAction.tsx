@@ -61,9 +61,7 @@ export default function CallToAction() {
               </ul>
 
               <motion.a
-                href="https://github.com/open-token"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="mailto:contact@open-token.org?subject=Interest%20in%20Becoming%20an%20OpenToken%20Provider"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-full font-semibold text-lg hover:shadow-lg transition-all duration-300"
@@ -112,9 +110,7 @@ export default function CallToAction() {
               </ul>
 
               <motion.a
-                href="https://github.com/open-token"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="mailto:contact@open-token.org?subject=Application%20for%20OpenToken%20Credits"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-full font-semibold text-lg hover:shadow-lg transition-all duration-300"
