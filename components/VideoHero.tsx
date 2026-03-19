@@ -33,7 +33,7 @@ export default function VideoHero() {
       <div className="absolute inset-0 z-0">
         <video
           ref={videoRef}
-          className="w-full h-full object-cover opacity-40"
+          className="w-full h-full object-cover opacity-60"
           loop
           muted={isMuted}
           playsInline
@@ -44,7 +44,7 @@ export default function VideoHero() {
         </video>
         
         {/* Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/65 via-black/50 to-black/75" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/60" />
       </div>
 
       {/* Video Controls */}
