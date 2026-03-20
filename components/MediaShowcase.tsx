@@ -1,7 +1,8 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { FiDownload, FiHeadphones, FiVideo } from 'react-icons/fi';
+import { FiDownload, FiHeadphones, FiVideo, FiShare2, FiMail, FiTwitter, FiLinkedin, FiCopy } from 'react-icons/fi';
+import { useState } from 'react';
 
 const mediaItems = [
   {
@@ -37,6 +38,39 @@ const mediaItems = [
 ];
 
 export default function MediaShowcase() {
+  const [copiedIndex, setCopiedIndex] = useState<number | null>(null);
+
+  const handleCopyLink = (file: string, index: number) => {
+    const fullUrl = `https://open-token.org${file}`;
+    navigator.clipboard.writeText(fullUrl);
+    setCopiedIndex(index);
+    setTimeout(() => setCopiedIndex(null), 2000);
+  };
+
+  const handleShare = (platform: string, file: string, title: string) => {
+    const fullUrl = `https://open-token.org${file}`;
+    const encodedUrl = encodeURIComponent(fullUrl);
+    const encodedTitle = encodeURIComponent(title);
+    
+    let shareUrl = '';
+    
+    switch (platform) {
+      case 'email':
+        shareUrl = `mailto:?subject=${encodedTitle}&body=Check out this resource from OpenToken: ${encodedUrl}`;
+        break;
+      case 'twitter':
+        shareUrl = `https://twitter.com/intent/tweet?text=${encodedTitle}&url=${encodedUrl}`;
+        break;
+      case 'linkedin':
+        shareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`;
+        break;
+    }
+    
+    if (shareUrl) {
+      window.open(shareUrl, '_blank', 'noopener,noreferrer');
+    }
+  };
+
   return (
     <section id="media" className="py-20 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-950">
       <div className="container mx-auto px-4">
@@ -121,15 +155,65 @@ export default function MediaShowcase() {
                     )}
                   </div>
 
-                  {/* Download Button */}
-                  <a
-                    href={item.file}
-                    download
-                    className="flex items-center justify-center gap-2 w-full px-6 py-3 bg-gradient-to-r from-gray-800 to-gray-900 dark:from-gray-700 dark:to-gray-800 text-white rounded-xl font-semibold hover:scale-105 transition-all duration-300 group-hover:shadow-lg"
-                  >
-                    <FiDownload className="text-xl" />
-                    Download {item.type === 'video' ? 'Video' : 'Audio'}
-                  </a>
+                  {/* Action Buttons */}
+                  <div className="space-y-3">
+                    {/* Download Button */}
+                    <a
+                      href={item.file}
+                      download
+                      className="flex items-center justify-center gap-2 w-full px-6 py-3 bg-gradient-to-r from-gray-800 to-gray-900 dark:from-gray-700 dark:to-gray-800 text-white rounded-xl font-semibold hover:scale-105 transition-all duration-300 group-hover:shadow-lg"
+                    >
+                      <FiDownload className="text-xl" />
+                      Download {item.type === 'video' ? 'Video' : 'Audio'}
+                    </a>
+
+                    {/* Share Buttons */}
+                    <div className="flex items-center gap-2">
+                      <div className="flex items-center gap-1 text-sm text-gray-500 dark:text-gray-400 mr-2">
+                        <FiShare2 className="text-base" />
+                        <span className="hidden sm:inline">Share:</span>
+                      </div>
+                      
+                      {/* Copy Link */}
+                      <button
+                        onClick={() => handleCopyLink(item.file, index)}
+                        className="flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-lg font-medium hover:bg-gray-200 dark:hover:bg-gray-600 transition-all duration-200"
+                        title="Copy link"
+                      >
+                        <FiCopy className="text-base" />
+                        <span className="text-sm">
+                          {copiedIndex === index ? 'Copied!' : 'Copy'}
+                        </span>
+                      </button>
+
+                      {/* Email */}
+                      <button
+                        onClick={() => handleShare('email', item.file, item.title)}
+                        className="flex items-center justify-center p-2 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-600 transition-all duration-200"
+                        title="Share via email"
+                      >
+                        <FiMail className="text-lg" />
+                      </button>
+
+                      {/* Twitter */}
+                      <button
+                        onClick={() => handleShare('twitter', item.file, item.title)}
+                        className="flex items-center justify-center p-2 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-600 transition-all duration-200"
+                        title="Share on Twitter"
+                      >
+                        <FiTwitter className="text-lg" />
+                      </button>
+
+                      {/* LinkedIn */}
+                      <button
+                        onClick={() => handleShare('linkedin', item.file, item.title)}
+                        className="flex items-center justify-center p-2 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-600 transition-all duration-200"
+                        title="Share on LinkedIn"
+                      >
+                        <FiLinkedin className="text-lg" />
+                      </button>
+                    </div>
+                  </div>
                 </div>
               </div>
             </motion.div>
