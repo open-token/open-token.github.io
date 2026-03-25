@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { FiUsers, FiRocket, FiGithub } from 'react-icons/fi';
+import { FaHandshake, FaRocket, FaGithub } from 'react-icons/fa';
 
 export default function CallToActionZh() {
   return (
@@ -15,7 +15,7 @@ export default function CallToActionZh() {
           <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true }} className="group">
             <div className="h-full bg-gradient-to-br from-indigo-50 to-purple-50 dark:from-indigo-950 dark:to-purple-950 rounded-3xl p-10 shadow-xl hover:shadow-2xl transition-all duration-300 border-2 border-indigo-200 dark:border-indigo-800">
               <div className="w-20 h-20 rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                <FiUsers className="text-4xl text-white" />
+                <FaHandshake className="text-4xl text-white" />
               </div>
               <h3 className="text-3xl font-bold mb-4 text-gray-800 dark:text-gray-100">面向 AI 提供商</h3>
               <p className="text-gray-600 dark:text-gray-400 mb-6 text-lg">与我们合作，支持开源社区，展示您对 AI 访问民主化的承诺。</p>
@@ -25,7 +25,7 @@ export default function CallToActionZh() {
                 <li className="flex items-start text-gray-700 dark:text-gray-300"><span className="w-2 h-2 rounded-full bg-pink-600 mt-2 mr-3 flex-shrink-0"></span><span>加入行业领导者联盟</span></li>
               </ul>
               <button className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-full font-semibold text-lg hover:shadow-lg transition-all duration-300">
-                <FiUsers className="text-xl" />
+                <FaHandshake className="text-xl" />
                 成为提供商
               </button>
             </div>
@@ -33,7 +33,7 @@ export default function CallToActionZh() {
           <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true }} className="group">
             <div className="h-full bg-gradient-to-br from-purple-50 to-pink-50 dark:from-purple-950 dark:to-pink-950 rounded-3xl p-10 shadow-xl hover:shadow-2xl transition-all duration-300 border-2 border-purple-200 dark:border-purple-800">
               <div className="w-20 h-20 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                <FiRocket className="text-4xl text-white" />
+                <FaRocket className="text-4xl text-white" />
               </div>
               <h3 className="text-3xl font-bold mb-4 text-gray-800 dark:text-gray-100">面向项目</h3>
               <p className="text-gray-600 dark:text-gray-400 mb-6 text-lg">申请算力额度，为您的开源 AI 项目、研究或倡议提供动力。</p>
@@ -43,7 +43,7 @@ export default function CallToActionZh() {
                 <li className="flex items-start text-gray-700 dark:text-gray-300"><span className="w-2 h-2 rounded-full bg-red-600 mt-2 mr-3 flex-shrink-0"></span><span>简单的申请流程</span></li>
               </ul>
               <button className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-full font-semibold text-lg hover:shadow-lg transition-all duration-300">
-                <FiRocket className="text-xl" />
+                <FaRocket className="text-xl" />
                 申请算力额度
               </button>
             </div>
@@ -51,7 +51,7 @@ export default function CallToActionZh() {
         </div>
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.4 }} viewport={{ once: true }} className="text-center mt-16">
           <a href="https://github.com/open-token" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 transition-colors duration-300 text-lg">
-            <FiGithub className="text-3xl" />
+            <FaGithub className="text-3xl" />
             <span className="font-semibold">在 GitHub 上查看</span>
           </a>
         </motion.div>

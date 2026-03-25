@@ -1,6 +1,6 @@
 'use client';
 
-import { FiGithub, FiTwitter, FiLinkedin, FiHeart } from 'react-icons/fi';
+import { FaGithub, FaTwitter, FaLinkedin, FaHeart } from 'react-icons/fa';
 
 export default function FooterZh() {
   return (
@@ -11,9 +11,9 @@ export default function FooterZh() {
             <h3 className="text-2xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 to-purple-400">OpenToken</h3>
             <p className="text-gray-400 mb-4">通过领先提供商捐赠的算力额度，实现 AI 访问民主化。</p>
             <div className="flex gap-4">
-              <a href="https://github.com/open-token" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors duration-300"><FiGithub className="text-2xl" /></a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors duration-300"><FiTwitter className="text-2xl" /></a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors duration-300"><FiLinkedin className="text-2xl" /></a>
+              <a href="https://github.com/open-token" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors duration-300"><FaGithub className="text-2xl" /></a>
+              <a href="#" className="text-gray-400 hover:text-white transition-colors duration-300"><FaTwitter className="text-2xl" /></a>
+              <a href="#" className="text-gray-400 hover:text-white transition-colors duration-300"><FaLinkedin className="text-2xl" /></a>
             </div>
           </div>
           <div>
@@ -40,7 +40,7 @@ export default function FooterZh() {
             <p className="text-lg font-semibold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400">代理开源基金会的倡议</p>
             <a href="https://aosf.ai" target="_blank" rel="noopener noreferrer" className="text-indigo-400 hover:text-indigo-300 transition-colors duration-300 text-sm font-medium">了解更多关于 AOSF →</a>
           </div>
-          <p className="text-gray-400 flex items-center justify-center gap-2">用 <FiHeart className="text-red-500" /> 为开源社区打造</p>
+          <p className="text-gray-400 flex items-center justify-center gap-2">用 <FaHeart className="text-red-500" /> 为开源社区打造</p>
           <p className="text-gray-500 text-sm mt-2">© 2026 OpenToken. 保留所有权利。</p>
         </div>
       </div>
