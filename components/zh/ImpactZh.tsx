@@ -16,10 +16,10 @@ export default function ImpactZh() {
         </motion.div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {[
-            { value: '0+', label: '目标 AI 提供商' },
-            { value: '0B+', label: '愿景：启用的 Token' },
-            { value: '0+', label: '目标：支持的项目' },
-            { value: '$0M+', label: '潜在成本节约' },
+            { value: '10+', label: '目标 AI 提供商' },
+            { value: '10B+', label: '愿景：启用的 Token' },
+            { value: '1000+', label: '目标：支持的项目' },
+            { value: '$10M+', label: '潜在成本节约' },
           ].map((stat, i) => (
             <motion.div key={i} initial={{ opacity: 0, scale: 0.5 }} whileInView={{ opacity: 1, scale: 1 }} transition={{ duration: 0.5, delay: i * 0.1 }} viewport={{ once: true }} className="text-center">
               <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-8 border border-white/20 hover:bg-white/20 transition-all duration-300">
