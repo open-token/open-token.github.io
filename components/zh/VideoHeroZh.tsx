@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { FiArrowDown, FiPlay, FiVolume2 } from 'react-icons/fi';
 import { useState, useRef } from 'react';
 
-export default function VideoHero() {
+export default function VideoHeroZh() {
   const [isPlaying, setIsPlaying] = useState(false);
   const [isMuted, setIsMuted] = useState(true);
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -40,21 +40,11 @@ export default function VideoHero() {
           poster="/media/video-poster.jpg"
         >
           <source src="/media/opentoken-promo.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
+          您的浏览器不支持视频标签。
         </video>
         
         {/* Gradient Overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/60" />
-      </div>
-
-      {/* Language Switcher */}
-      <div className="absolute top-8 left-8 z-20">
-        <a
-          href="/zh"
-          className="px-4 py-2 rounded-full bg-white/20 backdrop-blur-md border border-white/30 text-white font-semibold hover:bg-white/30 transition-all duration-300"
-        >
-          中文
-        </a>
       </div>
 
       {/* Video Controls */}
@@ -64,7 +54,7 @@ export default function VideoHero() {
           whileTap={{ scale: 0.9 }}
           onClick={togglePlay}
           className="w-12 h-12 rounded-full bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center text-white hover:bg-white/30 transition-all duration-300"
-          aria-label={isPlaying ? 'Pause video' : 'Play video'}
+          aria-label={isPlaying ? '暂停视频' : '播放视频'}
         >
           {isPlaying ? (
             <div className="w-3 h-3 flex gap-1">
@@ -81,7 +71,7 @@ export default function VideoHero() {
           whileTap={{ scale: 0.9 }}
           onClick={toggleMute}
           className="w-12 h-12 rounded-full bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center text-white hover:bg-white/30 transition-all duration-300"
-          aria-label={isMuted ? 'Unmute video' : 'Mute video'}
+          aria-label={isMuted ? '取消静音' : '静音'}
         >
           {isMuted ? (
             <div className="relative">
@@ -92,6 +82,16 @@ export default function VideoHero() {
             <FiVolume2 className="text-xl" />
           )}
         </motion.button>
+      </div>
+
+      {/* Language Switcher */}
+      <div className="absolute top-8 left-8 z-20">
+        <a
+          href="/"
+          className="px-4 py-2 rounded-full bg-white/20 backdrop-blur-md border border-white/30 text-white font-semibold hover:bg-white/30 transition-all duration-300"
+        >
+          English
+        </a>
       </div>
 
       {/* Content */}
@@ -117,7 +117,7 @@ export default function VideoHero() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-2xl md:text-4xl font-semibold mb-4 text-white drop-shadow-lg"
           >
-            AI Access for All
+            人人可用的 AI 算力
           </motion.p>
 
           <motion.p
@@ -126,8 +126,7 @@ export default function VideoHero() {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="text-lg md:text-xl text-gray-200 max-w-3xl mx-auto mb-8 drop-shadow-lg"
           >
-            Empowering the open-source community through donated compute credits from leading AI providers.
-            Building a future where innovation knows no boundaries.
+            通过领先 AI 提供商捐赠的算力额度，赋能开源社区。构建一个创新无界的未来。
           </motion.p>
 
           <motion.p
@@ -136,15 +135,15 @@ export default function VideoHero() {
             transition={{ duration: 0.8, delay: 0.7 }}
             className="text-base md:text-lg text-gray-300 max-w-2xl mx-auto mb-12 drop-shadow-lg"
           >
-            An initiative of the{' '}
             <a
-              href="https://aosf-org.github.io/"
+              href="https://aosf.ai"
               target="_blank"
               rel="noopener noreferrer"
               className="text-indigo-300 hover:text-indigo-200 underline decoration-indigo-400/50 hover:decoration-indigo-300 transition-colors duration-300"
             >
-              Agentic Open Source Foundation
+              代理开源基金会
             </a>
+            {' '}的倡议
           </motion.p>
 
           <motion.div
@@ -157,13 +156,13 @@ export default function VideoHero() {
               href="#media"
               className="px-8 py-4 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-full font-semibold text-lg hover:shadow-lg hover:shadow-indigo-500/50 hover:scale-105 transition-all duration-300"
             >
-              Watch & Listen
+              观看与聆听
             </a>
             <a
               href="#providers"
               className="px-8 py-4 bg-white/10 backdrop-blur-md border-2 border-white/30 text-white rounded-full font-semibold text-lg hover:bg-white/20 hover:scale-105 transition-all duration-300"
             >
-              Explore Providers
+              探索提供商
             </a>
           </motion.div>
         </motion.div>
