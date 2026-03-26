@@ -1,9 +1,19 @@
 'use client';
 
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FaHandshake, FaRocket, FaGithub } from 'react-icons/fa';
+import ContactModalZh from './ContactModalZh';
 
 export default function CallToActionZh() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalType, setModalType] = useState<'provider' | 'project'>('provider');
+
+  const openModal = (type: 'provider' | 'project') => {
+    setModalType(type);
+    setIsModalOpen(true);
+  };
+
   return (
     <section className="py-20 bg-white dark:bg-gray-950">
       <div className="container mx-auto px-4">
@@ -24,7 +34,10 @@ export default function CallToActionZh() {
                 <li className="flex items-start text-gray-700 dark:text-gray-300"><span className="w-2 h-2 rounded-full bg-purple-600 mt-2 mr-3 flex-shrink-0"></span><span>支持突破性的 AI 研究</span></li>
                 <li className="flex items-start text-gray-700 dark:text-gray-300"><span className="w-2 h-2 rounded-full bg-pink-600 mt-2 mr-3 flex-shrink-0"></span><span>加入行业领导者联盟</span></li>
               </ul>
-              <button className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-full font-semibold text-lg hover:shadow-lg transition-all duration-300">
+              <button 
+                onClick={() => openModal('provider')}
+                className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-full font-semibold text-lg hover:shadow-lg transition-all duration-300"
+              >
                 <FaHandshake className="text-xl" />
                 成为提供商
               </button>
@@ -42,7 +55,10 @@ export default function CallToActionZh() {
                 <li className="flex items-start text-gray-700 dark:text-gray-300"><span className="w-2 h-2 rounded-full bg-pink-600 mt-2 mr-3 flex-shrink-0"></span><span>访问多个 AI 提供商</span></li>
                 <li className="flex items-start text-gray-700 dark:text-gray-300"><span className="w-2 h-2 rounded-full bg-red-600 mt-2 mr-3 flex-shrink-0"></span><span>简单的申请流程</span></li>
               </ul>
-              <button className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-full font-semibold text-lg hover:shadow-lg transition-all duration-300">
+              <button 
+                onClick={() => openModal('project')}
+                className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-full font-semibold text-lg hover:shadow-lg transition-all duration-300"
+              >
                 <FaRocket className="text-xl" />
                 申请算力额度
               </button>
@@ -56,6 +72,12 @@ export default function CallToActionZh() {
           </a>
         </motion.div>
       </div>
+      
+      <ContactModalZh 
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        type={modalType}
+      />
     </section>
   );
 }
