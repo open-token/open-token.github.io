@@ -4,6 +4,7 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
+  trailingSlash: true,
   // Base path for GitHub Pages - update this if deploying to a repo subdirectory
   // basePath: '/repository-name',
   // For custom domain, leave basePath commented out
